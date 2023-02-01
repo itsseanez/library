@@ -1,0 +1,21 @@
+body {
+    display: grid;
+    margin: 0;
+    grid-template-rows: 20vh 80vh;
+}
+
+.bold-text {
+    color: #674188;
+}
+
+#header {
+    background-color: #F7EFE5;
+}
+
+#main-content {
+    background-color: #FFFBF5;
+}
+
+.text {
+    color: #C3ACD0;
+}

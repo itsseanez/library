@@ -1,9 +1,9 @@
 let myLibrary = [];
 
-function Book() {
+function Movie() {
   // the constructor...
 }
 
-function addBookToLibrary() {
+function addMovieToLibrary() {
   // do stuff here
 }
