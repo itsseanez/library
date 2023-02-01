@@ -8,6 +8,10 @@ body {
     color: #674188;
 }
 
+h1 {
+    font-size: 120px;
+}
+
 #header {
     background-color: #F7EFE5;
 }
