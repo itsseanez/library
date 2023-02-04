@@ -4,6 +4,16 @@ body {
     grid-template-rows: 20vh 80vh;
 }
 
+.book {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 7%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7EFE5;
+}
+
 .bold-text {
     color: #674188;
     font-family: "Oswald";
@@ -28,6 +38,15 @@ h1 {
     gap: 0px 5px;
 }
 
+#my-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+}
+
 #new-book {
     position: absolute;
     border-radius: 100%;
@@ -35,21 +54,22 @@ h1 {
     border: 0;
     background-color: #674188;
     color: white;
-    bottom: 5px;
-    right: 5px;
+    bottom: 10px;
+    right: 10px;
     width: 50px;
     height: 50px;
     font-size: xx-large;
 }
 
-.book {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 7%;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #F7EFE5;
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
 }
 
 .text {
