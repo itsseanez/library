@@ -16,7 +16,7 @@
         <h1 class="bold-text">library.</h1>
     </div>
     <div id="main-content">
-        <button id="new-book">+</button>
+        <button id="new-book" class="button-style">+</button>
         <div id="overlay" style="display: none;">
             <div id="my-form">
                 <form>
@@ -26,7 +26,11 @@
                 <input type="text" id="author" name="author" placeholder="Fyodor Dostoevsky">
                 <label class="bold-text" for="pages">Pages:</label>
                 <input type="text" id="pages" name="pages" placeholder="492">
-                <input type="submit" value="add">
+                <div>
+                    <label class="bold-text" for="is-read">Have you read it?</label>
+                    <input type="checkbox" id="my-checkbox">
+                </div>
+                <input class="button-style" type="submit" value="add">
                 </form>
             </div>
         </div>

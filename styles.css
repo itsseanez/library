@@ -19,6 +19,27 @@ body {
     font-family: "Oswald";
 }
 
+.button-style {
+    background-color: #674188;
+    color: white;
+    border: 0;
+    font-family: 'Oswald';
+    font-size: xx-large;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 h1 {
     font-size: 120px;
 }
@@ -29,6 +50,13 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-top: -15px;
+}
+
+input {
+    border-radius: 8px;
+    height: 48px;
+    font-family: 'Lato';
+    border: 0;
 }
 
 #main-content {
@@ -43,22 +71,20 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
     padding: 20px;
+    background-color: #F7EFE5; 
+    border-radius: 12px;
+    width: 20%;
+    height: 50%;
 }
 
 #new-book {
     position: absolute;
     border-radius: 100%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border: 0;
-    background-color: #674188;
-    color: white;
     bottom: 10px;
     right: 10px;
     width: 50px;
     height: 50px;
-    font-size: xx-large;
 }
 
 #overlay {
