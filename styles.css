@@ -28,6 +28,20 @@ h1 {
     gap: 0px 5px;
 }
 
+#new-book {
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 0;
+    background-color: #674188;
+    color: white;
+    bottom: 5px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: xx-large;
+}
+
 .book {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 7%;
@@ -40,4 +54,5 @@ h1 {
 
 .text {
     color: #C3ACD0;
+    font-family: 'Lato';
 }
