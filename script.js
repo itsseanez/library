@@ -1,6 +1,4 @@
-const book1 = new Book("Dazai osamu","no longer human", "125", true);
-
-let myLibrary = [book1];
+let myLibrary = [];
 
 function Book(author, title, pageNumbers, isRead) {
   // the constructor...
@@ -10,8 +8,9 @@ function Book(author, title, pageNumbers, isRead) {
   this.isRead= `Completed: ${isRead}`;
 }
 
-function addBookToLibrary() {
-  
+function addBookToLibrary(newAuthor, newTitle, newPageNumbers, newIsRead) {
+  const newBook = new Book(newAuthor, newTitle, newPageNumbers, newIsRead);
+  myLibrary.push(newBook);
 }
 
 //dispays books in array on page
@@ -45,8 +44,21 @@ function displayBooks() {
 
 const newBook = document.querySelector("#new-book");
 const overlay= document.querySelector('#overlay');
+const addBook= document.querySelector("#add-book");
+
 newBook.addEventListener('click', function() {
   overlay.style.display = 'block';
 });
 
-displayBooks();
+addBook.addEventListener('click', function() {
+  const title= document.getElementById('title').value;
+  const author= document.querySelector('#author').value;
+  const pages= document.querySelector('#pages').value;
+  const isRead= document.querySelector('#is-read').value;
+
+  addBookToLibrary(author, title, pages, isRead);
+  overlay.style.display = 'none';
+  displayBooks();
+  event.preventDefault();
+});
+
