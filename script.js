@@ -13,6 +13,12 @@ function addBookToLibrary(newAuthor, newTitle, newPageNumbers, newIsRead) {
   myLibrary.push(newBook);
 }
 
+function clear(element) {
+  for(let i=element.length-1; i>=0; i--) {
+      element[i].remove();
+  }
+}
+
 //dispays books in array on page
 function displayBooks() {
     for(let i=0; i< myLibrary.length; i++) {
@@ -55,9 +61,11 @@ addBook.addEventListener('click', function() {
   const author= document.querySelector('#author').value;
   const pages= document.querySelector('#pages').value;
   const isRead= document.querySelector('#is-read').value;
+  const book= document.querySelectorAll(".book");
 
   addBookToLibrary(author, title, pages, isRead);
   overlay.style.display = 'none';
+  clear(book);
   displayBooks();
   event.preventDefault();
 });
