@@ -98,6 +98,19 @@ input {
     z-index: 9999;
 }
 
+.read {
+    border-radius: 8px;
+    height: 48px;
+    font-family: 'Lato';
+    border: 0;
+    background-color: #674188;
+    color: white;
+    border: 0;
+    font-size: xx-large;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 15px;
+}
+
 .text {
     color: #C3ACD0;
     font-family: 'Lato';

@@ -27,7 +27,7 @@ function displayBooks() {
       const title= document.createElement('p')
       const author= document.createElement('p');
       const pages= document.createElement('p');
-      const isRead= document.createElement('p');
+      const isRead= document.createElement('BUTTON');
       
       title.textContent= myLibrary[i].title;
       author.textContent= myLibrary[i].author;
@@ -38,7 +38,7 @@ function displayBooks() {
       title.classList.add('text');
       author.classList.add('text');
       pages.classList.add('text');
-      isRead.classList.add('text');
+      isRead.classList.add('read');
 
       book.appendChild(title);
       book.appendChild(author);
@@ -67,6 +67,7 @@ addBook.addEventListener('click', function() {
   overlay.style.display = 'none';
   clear(book);
   displayBooks();
+  document.getElementById("myForm").reset();
   event.preventDefault();
 });
 
