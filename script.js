@@ -1,6 +1,7 @@
 let myLibrary = [];
+let index=0;
 
-function Book(author, title, pageNumbers, isRead) {
+function Book(author, title, pageNumbers,isRead) {
   // the constructor...
   this.author= author;
   this.title= `"${title}"`;
@@ -8,8 +9,8 @@ function Book(author, title, pageNumbers, isRead) {
   this.isRead= isRead;
 }
 
-function addBookToLibrary(newAuthor, newTitle, newPageNumbers, newIsRead) {
-  const newBook = new Book(newAuthor, newTitle, newPageNumbers, newIsRead);
+function addBookToLibrary(newAuthor, newTitle, newPageNumbers, newIsRead, index) {
+  const newBook = new Book(newAuthor, newTitle, newPageNumbers, newIsRead, index);
   myLibrary.push(newBook);
 }
 
@@ -38,10 +39,17 @@ function displayBooks() {
       title.classList.add('text');
       author.classList.add('text');
       pages.classList.add('text');
-      if(isRead.textContent === "Read") {
+
+      isRead.addEventListener('click', function() {
+        myLibrary[i].toggleRead();
+      });
+
+      if(isRead.textContent === 'true') {
+        isRead.textContent= "Read";
         isRead.classList.add('read');
       }
       else {
+        isRead.textContent= "Not Read";
         isRead.classList.add('not-read');
       }
 
@@ -72,10 +80,10 @@ addBook.addEventListener('click', function() {
   let isRead;
 
   if (checkbox.checked) {
-    isRead= 'Read';
+    isRead= true;
   }
   else {
-    isRead='Not Read';
+    isRead=false;
   }
 
   addBookToLibrary(author, title, pages, isRead);
@@ -85,4 +93,12 @@ addBook.addEventListener('click', function() {
   document.getElementById("myForm").reset();
   event.preventDefault();
 });
+
+Book.prototype.toggleRead = function() {
+  this.isRead = !this.isRead;
+};
+
+const readStatus= document.querySelectorAll(".read, .not-read");
+
+
 
