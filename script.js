@@ -5,7 +5,7 @@ function Book(author, title, pageNumbers, isRead) {
   this.author= author;
   this.title= `"${title}"`;
   this.pageNumbers= `${pageNumbers} pages`;
-  this.isRead= `Completed: ${isRead}`;
+  this.isRead= isRead;
 }
 
 function addBookToLibrary(newAuthor, newTitle, newPageNumbers, newIsRead) {
@@ -38,7 +38,12 @@ function displayBooks() {
       title.classList.add('text');
       author.classList.add('text');
       pages.classList.add('text');
-      isRead.classList.add('read');
+      if(isRead.textContent === "Read") {
+        isRead.classList.add('read');
+      }
+      else {
+        isRead.classList.add('not-read');
+      }
 
       book.appendChild(title);
       book.appendChild(author);
@@ -52,16 +57,26 @@ const newBook = document.querySelector("#new-book");
 const overlay= document.querySelector('#overlay');
 const addBook= document.querySelector("#add-book");
 
+//Opens form to make new book
 newBook.addEventListener('click', function() {
   overlay.style.display = 'block';
 });
 
+//Adds form input to new book in library
 addBook.addEventListener('click', function() {
   const title= document.getElementById('title').value;
   const author= document.querySelector('#author').value;
   const pages= document.querySelector('#pages').value;
-  const isRead= document.querySelector('#is-read').value;
+  const checkbox= document.querySelector('#is-read');
   const book= document.querySelectorAll(".book");
+  let isRead;
+
+  if (checkbox.checked) {
+    isRead= 'Read';
+  }
+  else {
+    isRead='Not Read';
+  }
 
   addBookToLibrary(author, title, pages, isRead);
   overlay.style.display = 'none';

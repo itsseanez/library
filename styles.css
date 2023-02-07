@@ -87,6 +87,19 @@ input {
     height: 50px;
 }
 
+.not-read {
+    border-radius: 8px;
+    height: 48px;
+    font-family: 'Lato';
+    border: 0;
+    background-color: #A61F69;
+    color: white;
+    border: 0;
+    font-size: xx-large;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 15px;
+}
+
 #overlay {
     display: none;
     position: fixed;
