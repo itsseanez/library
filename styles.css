@@ -1,0 +1,88 @@
+:root {
+    --primary-color: #252422;
+    --secondary-color: #403D39;
+    --tertiary-color: #CCC5B9;
+    --auxillary-color: #EB5E28;
+    --white-color: #FFFCF2;
+    --font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#open-dialog-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--white-color);
+}
+
+.book {
+    background-color: var(--tertiary-color);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: var(--primary-color);
+}
+
+.book h3 {
+    margin-top: 0;
+}
+
+.book p {
+    margin: 0.5rem 0;
+}
+
+button {
+    background-color: var(--auxillary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.clicked {
+    background-color: var(--secondary-color);
+}
+
+dialog {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#library-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
