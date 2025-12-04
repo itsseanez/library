@@ -21,6 +21,7 @@ function displayLibrary() {
 
     myLibrary.forEach((book) => {
         const bookDiv = document.createElement('div');
+        bookDiv.dataset.id = book.id;
         bookDiv.classList.add('book');
 
         const title = document.createElement('h3');
@@ -47,9 +48,18 @@ function displayLibrary() {
         });
         bookDiv.appendChild(isRead);
 
-        /*const deleteButton = document.createElement('button');
-        deleteButton.textContent = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can-outline</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>;
-        bookDiv.appendChild(deleteButton);*/
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-btn');
+        deleteButton.innerHTML = '<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can-outline</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>';
+        deleteButton.addEventListener('click', () => {
+            myLibrary.forEach((book, index) => {
+                if (bookDiv.dataset.id === book.id) {
+                    myLibrary.splice(index, 1);
+                }
+            });
+            displayLibrary();
+        });
+        bookDiv.appendChild(deleteButton);
 
         libraryContainer.appendChild(bookDiv);
     });

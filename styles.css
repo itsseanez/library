@@ -36,6 +36,7 @@ body {
     width: 200px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     color: var(--primary-color);
+    position: relative;
 }
 
 .book h3 {
@@ -58,6 +59,15 @@ button {
 
 .clicked {
     background-color: var(--secondary-color);
+}
+
+.delete-btn {
+    background-color: var(--tertiary-color);
+    color: var(--auxillary-color);
+    position: absolute;
+    bottom: .75rem;
+    right: .75rem;
+    padding: 0;
 }
 
 dialog {
@@ -85,4 +95,9 @@ dialog::backdrop {
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
+}
+
+svg {
+    height: 2rem;
+    width: 2rem;
 }
