@@ -9,6 +9,9 @@ const Book = class {
         this.id = id;
     }
 
+    toggleRead() {
+        this.isRead = !this.isRead;
+    }
 }
 
 function addBookToLibrary(title, author, pages, isRead) {
@@ -44,7 +47,7 @@ function displayLibrary() {
             isRead.classList.add('clicked');
         }
         isRead.addEventListener('click', () => {
-            book.isRead = !book.isRead;
+            book.toggleRead();
             isRead.textContent = book.isRead ? 'Read' : 'Not Read';
             isRead.classList.toggle('clicked');
         });
